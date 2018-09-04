@@ -7,7 +7,7 @@ while True:
     db = "new.db"  # название БД в папке со скриптом
     db = sqlite3.connect(db)
     c = db.cursor()
-    with urllib.request.urlopen("https://api.exmo.com/v1/ticker/") as url:
+    with urllib.request.urlopen("https://api.exmo.com/v1/ticker/") as url: # Путь к json
         j = json.loads(url.read().decode())
         for row in j:
             buy_price = str(j[row]['buy_price'])
